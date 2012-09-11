@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" encoding="utf-8">
+	<head>
+		<title>ImageManipulator | JCarpe Lib Documentation</title>
+		<link rel="stylesheet" type="text/css" href="../css/shCoreDefault.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/VisDoc.min.css" />
+		<script type="text/javascript" src="../js/1_jquery.min.js"></script>
+		<script type="text/javascript" src="../js/2_jquery.cookie.min.js"></script>
+		<script type="text/javascript" src="../js/3_jquery.simpletreeview.min.js"></script>
+		<script type="text/javascript" src="../js/4_shCore.min.js"></script>
+		<script type="text/javascript" src="../js/5_shBrushAS3.min.js"></script>
+		<script type="text/javascript" src="../js/6_shBrushJava.min.js"></script>
+		<script type="text/javascript" src="../js/7_VisDoc.min.js"></script>
+	</head>
+	<body class='isShowingNavigation' id='page_jcarpe_util_ImageManipulator'>
+	    <div id='page'> 
+			<div id='wrapper'>
+				<div id='outer'> 
+					<div id='floatWrap'> 
+						<div id='main'>
+							<div id='clearHeaderCenter'></div> 
+							<div id='mainContent'>
+																<h1>ImageManipulator</h1>									<div class='classProperties'>
+		<table cellspacing='0'>
+				<tr>
+		<th>Kind of class:</th>
+		<td>public class</td>
+	</tr>
+							<tr>
+		<th>Package:</th>
+		<td>
+			<ul>
+								<li>			<a href="package_jcarpe_util.html">jcarpe.util</a>
+</li>
+							</ul>
+		</td>
+	</tr>
+							<tr>
+		<th>Inherits from:</th>
+		<td>
+			<ul>
+								<li>			none</li>
+							</ul>
+		</td>
+	</tr>
+																<tr>
+		<th class='classDetails'>Author:</th>
+		<td class='classDetails'>Joe Carpenito</td>
+	</tr>
+	<tr>
+		<th class='classDetails'>Classpath:</th>
+		<td class='classDetails'>jcarpe.util.ImageManipulator</td>
+	</tr>
+	<tr>
+		<th class='classDetails'>File last modified:</th>
+		<td class='classDetails'>Thursday, 24 May 2012, 18:02:42</td>
+	</tr>
+		</table>
+	</div>
+		<div class='classDescription'>
+	<span class='descriptionSummary'>ImageManipulator</span>	
+
+Utility for manipulations of images. All public methods in this class accept ONLY Bitmap
+objects and all functions will automatically set PixelSnapping.ALWAYS and smoothing
+to true for methods that return a Bitmap object.</div>
+
+									<div class='toc'>
+		<h2 id='Summary'>Summary</h2>
+		<div class='docNav'>
+			<ul>
+									<li>
+						<span class='typeInfoHide'><a href="#" class='jqButton jqButtonSmall'><span class='jqButtonIcon'>&times;</span>Hide type info</a></span>
+						<span class='typeInfoShow'><a href="#" class='jqButton jqButtonSmall'><span class='jqButtonIcon'>+</span>Show type info</a></span>
+					</li>									<li>
+						<span class='summariesHide'><a href="#" class='jqButton jqButtonSmall'><span class='jqButtonIcon'>&times;</span>Hide summaries</a></span>
+						<span class='summariesShow'><a href="#" class='jqButton jqButtonSmall'><span class='jqButtonIcon'>+</span>Show summaries</a></span>
+					</li>			</ul>
+			<div class='clear'></div>
+		</div>
+				<div class='memberList'>
+							<div class='memberSummaryPart'>
+					<span class='title'>Class methods</span>
+					<ul>
+													<li class=''>								
+								<a href="#crop">crop</a>
+																<span class='typeInfo'>(_x:Number, _y:Number, _width:Number, _height:Number, _stage:Stage, bitmap:Bitmap = null) : Bitmap</span>																<ul class='summary'>
+									<li>Crops a bitmap and returns the cropped bitmap. </li>
+								</ul>							</li>
+													<li class=''>								
+								<a href="#reflect">reflect</a>
+																<span class='typeInfo'>(_bitmap:Bitmap, direction:String = "horizontal") : Bitmap</span>																<ul class='summary'>
+									<li>Reflects a bitmap and then zeros out it's x,y coordinates.</li>
+								</ul>							</li>
+													<li class=''>								
+								<a href="#samplePixelColor">samplePixelColor</a>
+																<span class='typeInfo'>(_x:Number, _y:Number, _bitmap:Bitmap) : uint</span>																<ul class='summary'>
+									<li>Samples the color of a pixel in a provided bitmap at the x,y coordinate provided.</li>
+								</ul>							</li>
+													<li class=''>								
+								<a href="#saturation">saturation</a>
+																<span class='typeInfo'>(bitmap:Bitmap, satValue:Number) : Bitmap</span>																<ul class='summary'>
+									<li>Adjusts the saturation of an image on a scale of -255 to 255.</li>
+								</ul>							</li>
+											</ul>
+									</div>
+					</div>	</div>
+																					<div class='memberSection'>
+			<h2 id='Classmethods'>Class methods</h2>
+							<div class='member' id='crop'>
+									<h3>crop</h3>											<div class='fullMemberString'>
+							<span class='code'>static function <strong>crop</strong>(_x:Number,
+                     _y:Number,
+                     _width:Number,
+                     _height:Number,
+                     _stage:Stage,
+                     bitmap:Bitmap = null) : Bitmap</span>						</div>											<div class='description'>
+																			<p>Crops a bitmap and returns the cropped bitmap. If no bitmap is provided, a bitmap the dimensions of the crop area will be returned.</p>						</div>										<div class='boxWithBorder'>
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Parameters</span>
+						<div class='item'>
+		<span class='colorizedCode code'>_x     <span class='itemSeparator'>:</span></span>X value to begin crop	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_y     <span class='itemSeparator'>:</span></span>Y value to begin crop	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_width <span class='itemSeparator'>:</span></span>Width value of the crop	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_height<span class='itemSeparator'>:</span></span>Height value of the crop	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_stage <span class='itemSeparator'>:</span></span>The stage that the DisplayObject to be cropped is on	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>bitmap <span class='itemSeparator'>:</span></span>The Bitmap to be cropped	</div>
+
+					<div class='item'>
+					</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Returns</span>
+					<div class='item'>
+					<ul>
+								<li>
+					croppedBitmap
+:the cropped bitmap instance									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+											</div>				</div>
+							<div class='member' id='reflect'>
+									<h3>reflect</h3>											<div class='fullMemberString'>
+							<span class='code'>static function <strong>reflect</strong>(_bitmap:Bitmap,
+                        direction:String = "horizontal") : Bitmap</span>						</div>											<div class='description'>
+																			<p>Reflects a bitmap and then zeros out it's x,y coordinates.</p>						</div>										<div class='boxWithBorder'>
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Parameters</span>
+						<div class='item'>
+		<span class='colorizedCode code'>_bitmap  <span class='itemSeparator'>:</span></span>The Bitmap to be reflected	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>direction<span class='itemSeparator'>:</span></span>Indicates a "horizontal" or "vertical" reflection	</div>
+
+					<div class='item'>
+					</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Returns</span>
+					<div class='item'>
+					<ul>
+								<li>
+					reflectedBitmap
+:the reflected bitmap instance									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Throws</span>
+					<div class='item'>
+					<ul>
+								<li>
+					ArgumentError  :'direction' property is not 'horizontal' or 'verticle': jcarpe.util.ImageManipulator.reflect()									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+											</div>				</div>
+							<div class='member' id='samplePixelColor'>
+									<h3>samplePixelColor</h3>											<div class='fullMemberString'>
+							<span class='code'>static function <strong>samplePixelColor</strong>(_x:Number,
+                                 _y:Number,
+                                 _bitmap:Bitmap) : uint</span>						</div>											<div class='description'>
+																			<p>Samples the color of a pixel in a provided bitmap at the x,y coordinate provided.</p>						</div>										<div class='boxWithBorder'>
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Parameters</span>
+						<div class='item'>
+		<span class='colorizedCode code'>_x     <span class='itemSeparator'>:</span></span>X position of desired pixel	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_y     <span class='itemSeparator'>:</span></span>Y position of desired pixel	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>_bitmap<span class='itemSeparator'>:</span></span>The bitmap to be sampled from	</div>
+
+					<div class='item'>
+					</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Returns</span>
+					<div class='item'>
+					<ul>
+								<li>
+					sampleColor
+:the uint value of the sampled color									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Throws</span>
+					<div class='item'>
+					<ul>
+								<li>
+					Error  :the provided coordinates are outside the bounds of the provided bitmap									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+											</div>				</div>
+							<div class='member' id='saturation'>
+									<h3>saturation</h3>											<div class='fullMemberString'>
+							<span class='code'>static function <strong>saturation</strong>(bitmap:Bitmap,
+                           satValue:Number) : Bitmap</span>						</div>											<div class='description'>
+																			<p>Adjusts the saturation of an image on a scale of -255 to 255.</p>						</div>										<div class='boxWithBorder'>
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Parameters</span>
+						<div class='item'>
+		<span class='colorizedCode code'>bitmap  <span class='itemSeparator'>:</span></span>the bitmap to be altered	</div>
+
+						<div class='item'>
+		<span class='colorizedCode code'>satValue<span class='itemSeparator'>:</span></span>value to alter the bitmap saturation	</div>
+
+					<div class='item'>
+					</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Returns</span>
+					<div class='item'>
+					<ul>
+								<li>
+					saturatedBitmap
+the saturated bitmap									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+														<div class='boxedElem'>
+		<div class='contentHolder'>
+			<span class='title'>Throws</span>
+					<div class='item'>
+					<ul>
+								<li>
+					ArgumentError  the saturation value is out of range									</li>
+							</ul>			</div>
+					</div>
+	</div>
+
+											</div>				</div>
+					</div>
+		
+							</div>
+						</div>
+											<div id='sidebar'>
+		<div id='clearHeaderLeft'></div> 
+		<div id='sidebarContent'>
+				<div class="list">
+							<ul>
+		<li  class=''>											<li id='menu_index' class=''>				<a href="index.html">JCarpe Lib Documentation</a>
+</li>
+						</li>
+</ul>
+
+					<ul id='treemenu'>
+		<li  class=''>									<h2>Packages and classes</h2>											<ul>
+		<li  id='menu_package_jcarpe_events' class='package'>
+																	<a href="package_jcarpe_events.html">jcarpe.events</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_events_JDataEvent' class=''>				<a href="jcarpe_events_JDataEvent.html"><span class='packagePath'>jcarpe.events.</span>JDataEvent</a>
+</li>
+							<li id='menu_jcarpe_events_JInteractionEvent' class=''>				<a href="jcarpe_events_JInteractionEvent.html"><span class='packagePath'>jcarpe.events.</span>JInteractionEvent</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+							<ul>
+		<li  id='menu_package_jcarpe_loading' class='package'>
+																	<a href="package_jcarpe_loading.html">jcarpe.loading</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_loading_XMLLoader' class=''>				<a href="jcarpe_loading_XMLLoader.html"><span class='packagePath'>jcarpe.loading.</span>XMLLoader</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+							<ul>
+		<li  id='menu_package_jcarpe_math' class='package'>
+																	<a href="package_jcarpe_math.html">jcarpe.math</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_math_Conversion' class=''>				<a href="jcarpe_math_Conversion.html"><span class='packagePath'>jcarpe.math.</span>Conversion</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+							<ul>
+		<li  id='menu_package_jcarpe_mvc_controller' class='package'>
+																	<a href="package_jcarpe_mvc_controller.html">jcarpe.mvc.controller</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_mvc_controller_AbstractController' class=''>				<a href="jcarpe_mvc_controller_AbstractController.html"><span class='packagePath'>jcarpe.mvc.controller.</span>AbstractController</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+							<ul>
+		<li  id='menu_package_jcarpe_ui' class='package'>
+																	<a href="package_jcarpe_ui.html">jcarpe.ui</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_ui_IJButton' class='interface'>				<a href="jcarpe_ui_IJButton.html"><span class='packagePath'>jcarpe.ui.</span>IJButton</a>
+</li>
+							<li id='menu_jcarpe_ui_JButton' class=''>				<a href="jcarpe_ui_JButton.html"><span class='packagePath'>jcarpe.ui.</span>JButton</a>
+</li>
+							<li id='menu_jcarpe_ui_JInteractiveObject' class=''>				<a href="jcarpe_ui_JInteractiveObject.html"><span class='packagePath'>jcarpe.ui.</span>JInteractiveObject</a>
+</li>
+							<li id='menu_jcarpe_ui_JMouseCursor' class=''>				<a href="jcarpe_ui_JMouseCursor.html"><span class='packagePath'>jcarpe.ui.</span>JMouseCursor</a>
+</li>
+							<li id='menu_jcarpe_ui_ToolTip' class=''>				<a href="jcarpe_ui_ToolTip.html"><span class='packagePath'>jcarpe.ui.</span>ToolTip</a>
+</li>
+							<li id='menu_jcarpe_ui_ToolTipArrowPosition' class=''>				<a href="jcarpe_ui_ToolTipArrowPosition.html"><span class='packagePath'>jcarpe.ui.</span>ToolTipArrowPosition</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+							<ul>
+		<li  id='menu_package_jcarpe_util' class='package'>
+																	<a href="package_jcarpe_util.html">jcarpe.util</a>
+
+															<ul>
+		<li  class=''>											<li id='menu_jcarpe_util_ImageManipulator' class=''>				<a href="jcarpe_util_ImageManipulator.html"><span class='packagePath'>jcarpe.util.</span>ImageManipulator</a>
+</li>
+							<li id='menu_jcarpe_util_JLogger' class=''>				<a href="jcarpe_util_JLogger.html"><span class='packagePath'>jcarpe.util.</span>JLogger</a>
+</li>
+						</li>
+</ul>
+
+				</li>
+</ul>
+
+				</li>
+</ul>
+
+			</div>					<div class="globalNav">
+							<ul>
+									<li>
+						<li id='menu_all-packages' class=''>				<a href="all-packages.html">Package tree</a>
+</li>					</li>
+									<li>
+						<li id='menu_all-classes' class=''>				<a href="all-classes.html">Classes</a>
+</li>					</li>
+									<li>
+						<li id='menu_all-methods' class=''>				<a href="all-methods.html">Methods</a>
+</li>					</li>
+									<li>
+						<li id='menu_all-constants' class=''>				<a href="all-constants.html">Constants</a>
+</li>					</li>
+									<li>
+						<li id='menu_all-properties' class=''>				<a href="all-properties.html">Properties</a>
+</li>					</li>
+									<li>
+						<li class=''></li>					</li>
+							</ul>	</div>
+		</div>
+	</div>
+
+					</div>
+					<div class='clear'>&nbsp;</div> 
+				</div>
+			</div>
+			<div id='header'>
+				<div id='headerContentWrapper'>
+					<div id='headerContent'>
+						<ul id='headerButtons'>
+															<li id='toggleTocButton'><a href="#"><span class='disclosure'>&#9660;</span><span class='closure'>&#9658;</span>Navigation</a></li>													</ul>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+	<div id="footerContent">
+		<ul>
+						<li class="copyright">
+				Joe Carpenito | Copyright 2012
+			</li>		</ul>
+	</div>
+</div>
+		</div>
+     </body>
+</html>
