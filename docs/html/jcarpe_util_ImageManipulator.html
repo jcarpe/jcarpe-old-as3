@@ -53,7 +53,7 @@
 	</tr>
 	<tr>
 		<th class='classDetails'>File last modified:</th>
-		<td class='classDetails'>Thursday, 24 May 2012, 18:02:42</td>
+		<td class='classDetails'>Wednesday, 12 September 2012, 19:39:01</td>
 	</tr>
 		</table>
 	</div>
@@ -202,7 +202,10 @@ to true for methods that return a Bitmap object.</div>
 							<span class='code'>static function <strong>samplePixelColor</strong>(_x:Number,
                                  _y:Number,
                                  _bitmap:Bitmap) : uint</span>						</div>											<div class='description'>
-																			<p>Samples the color of a pixel in a provided bitmap at the x,y coordinate provided.</p>						</div>										<div class='boxWithBorder'>
+																			<p>Samples the color of a pixel in a provided bitmap at the x,y coordinate provided.
+The advantage to using this over just <code><span class="codeIdentifier">BitmapData</span><span class="codeIdentifier">.getPixel32</span>( x, y )</code> is
+that if you are out of the bounds of the bitmap, it will throw an error so you know
+what you've done wrong.</p>						</div>										<div class='boxWithBorder'>
 														<div class='boxedElem'>
 		<div class='contentHolder'>
 			<span class='title'>Parameters</span>

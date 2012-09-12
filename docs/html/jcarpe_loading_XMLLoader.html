@@ -53,14 +53,15 @@
 	</tr>
 	<tr>
 		<th class='classDetails'>File last modified:</th>
-		<td class='classDetails'>Monday, 18 June 2012, 19:42:47</td>
+		<td class='classDetails'>Wednesday, 12 September 2012, 19:54:41</td>
 	</tr>
 		</table>
 	</div>
 		<div class='classDescription'>
 	<span class='descriptionSummary'>XMLLoader</span>	
 
-An XML loader and parser.</div>
+An XML loader and parser. It includes a progress value that is rounded to a uint.
+The complete event also includes a passed data object with the loaded data.</div>
 
 									<div class='toc'>
 		<h2 id='Summary'>Summary</h2>
@@ -89,10 +90,14 @@ An XML loader and parser.</div>
 					<ul>
 													<li class=''>								
 								<a href="#data">data</a>
-																<span class='typeInfo'> : XML</span>															</li>
+																<span class='typeInfo'> : XML</span>																<ul class='summary'>
+									<li>The XML data that was loaded in.</li>
+								</ul>							</li>
 													<li class=''>								
 								<a href="#progress">progress</a>
-																<span class='typeInfo'> : Number</span>															</li>
+																<span class='typeInfo'> : uint</span>																<ul class='summary'>
+									<li>Loading progress as a whole number out of 100 ( 0% - 100% ).</li>
+								</ul>							</li>
 											</ul>
 									</div>
 							<div class='memberSummaryPart'>
@@ -116,10 +121,12 @@ An XML loader and parser.</div>
 			<h2 id='Instanceproperties'>Instance properties</h2>
 							<div class='member' id='data'>
 									<h3>data</h3>											<div class='fullMemberString'>
-							<span class='code'><strong>data</strong>:XML</span><span class='access'>(read)</span>						</div>														</div>
+							<span class='code'><strong>data</strong>:XML</span><span class='access'>(read)</span>						</div>											<div class='description'>
+																			<p>The XML data that was loaded in.</p>						</div>									</div>
 							<div class='member' id='progress'>
 									<h3>progress</h3>											<div class='fullMemberString'>
-							<span class='code'><strong>progress</strong>:Number</span><span class='access'>(read,write)</span>						</div>														</div>
+							<span class='code'><strong>progress</strong>:uint</span><span class='access'>(read,write)</span>						</div>											<div class='description'>
+																			<p>Loading progress as a whole number out of 100 ( 0% - 100% ).</p>						</div>									</div>
 					</div>
 				<div class='memberSection'>
 			<h2 id='Instancemethods'>Instance methods</h2>

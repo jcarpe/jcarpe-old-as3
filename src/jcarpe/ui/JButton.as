@@ -58,7 +58,8 @@ package jcarpe.ui
 		// PUBLIC METHODS
 		// --------------------------------------------------------------------------------
 		/**
-		 * Dispose method that will destroy all children of the button.
+		 * Dispose method that will destroy all children of the button and remove any
+		 * active listeners.
 		 */
 		public function destroy() : void
 		{
@@ -67,6 +68,9 @@ package jcarpe.ui
 			{
 				this.removeChildAt( 0 );
 			}
+			
+			// remove all listeners
+			this.deconfigMouseEvents();
 		}
 		
 		/**
@@ -84,7 +88,10 @@ package jcarpe.ui
 		public function deconfigMouseEvents() : void
 		{
 			this.buttonMode = false;
-			removeEventListener( MouseEvent.MOUSE_OVER, mouseEventHandler );
+			if( this.hasEventListener( MouseEvent.MOUSE_OVER ) )
+			{
+				removeEventListener( MouseEvent.MOUSE_OVER, mouseEventHandler );
+			}
 		}
 		
 		/**

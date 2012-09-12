@@ -12,7 +12,18 @@ package jcarpe.mvc.controller
 	 */
 	public class AbstractController
 	{
+		// --------------------------------------------------------------------------------
+		// PROPERTIES
+		// --------------------------------------------------------------------------------
 		protected var _dispatcher:EventDispatcher;
+		/**
+		 * The event dispatcher just for this controller.
+		 */
+		public function get dispatcher():EventDispatcher
+		{
+			if( _dispatcher == null ) { _dispatcher = new EventDispatcher(); }
+			return _dispatcher;
+		}
 		
 		// --------------------------------------------------------------------------------
 		// CONSTRUCTOR
@@ -20,15 +31,6 @@ package jcarpe.mvc.controller
 		public function AbstractController()
 		{
 			
-		}
-		
-		// ------------------------------------------------------------------------------------------------
-		// Properties
-		// ------------------------------------------------------------------------------------------------
-		public function get dispatcher():EventDispatcher
-		{
-			if( _dispatcher == null ) { _dispatcher = new EventDispatcher(); }
-			return _dispatcher;
 		}
 	}
 }

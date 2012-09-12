@@ -103,6 +103,9 @@ package jcarpe.util
 		
 		/**
 		 * Samples the color of a pixel in a provided bitmap at the x,y coordinate provided.
+		 * The advantage to using this over just <code>BitmapData.getPixel32( x, y )</code> is
+		 * that if you are out of the bounds of the bitmap, it will throw an error so you know
+		 * what you've done wrong.
 		 * 
 		 * @param _x
 		 * X position of desired pixel

@@ -14,11 +14,10 @@ package jcarpe.ui
 	 * JInteractiveObject
 	 * 
 	 * This is to replace a MovieClip just in order to catch MouseEvent(s) 
-	 * and TouchEvent(s) in order for it to dispatch <code>JInteractionEvent</code>. 
-	 * We'll see how that goes. 
+	 * and TouchEvent(s) in order for it to dispatch <code>JInteractionEvent</code>.
 	 * 
-	 * The use of this object is intended only for development of
-	 * software to be deployed on hardware that supports touch input.
+	 * The use of this object is intended only for development of software to be deployed
+	 * on hardware that supports touch input as well as mouse and keyboard input.
 	 * 
 	 * @see jcarpe.events.JInteractionEvent
 	 * 
@@ -35,24 +34,6 @@ package jcarpe.ui
 			
 			this.addEventListener( Event.ADDED_TO_STAGE, onAddedHandle );
 			this.addEventListener( Event.REMOVED_FROM_STAGE, onRemoveHandle );
-		}
-		
-		/**
-		 * @private
-		 **/
-		private function onAddedHandle( event:Event ) : void
-		{
-			this.removeEventListener( Event.ADDED_TO_STAGE, onAddedHandle );
-			configEvents();
-		}
-		
-		/**
-		 * @private
-		 **/
-		private function onRemoveHandle( event:Event ) : void
-		{
-			this.removeEventListener( Event.REMOVED_FROM_STAGE, onRemoveHandle );
-			deconfigEvents();
 		}
 		
 		// --------------------------------------------------------------------------------
@@ -133,8 +114,26 @@ package jcarpe.ui
 		}
 		
 		// --------------------------------------------------------------------------------
-		// INTERACTION HANDLERS
+		// HANDLERS
 		// --------------------------------------------------------------------------------
+		/**
+		 * @private
+		 **/
+		private function onAddedHandle( event:Event ) : void
+		{
+			this.removeEventListener( Event.ADDED_TO_STAGE, onAddedHandle );
+			configEvents();
+		}
+		
+		/**
+		 * @private
+		 **/
+		private function onRemoveHandle( event:Event ) : void
+		{
+			this.removeEventListener( Event.REMOVED_FROM_STAGE, onRemoveHandle );
+			deconfigEvents();
+		}
+		
 		/**
 		 * @private
 		 **/
