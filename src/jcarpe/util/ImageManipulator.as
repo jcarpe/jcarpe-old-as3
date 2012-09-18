@@ -80,22 +80,25 @@ package jcarpe.util
 			}
 			else
 			{
-				// create transform matrix based on type of reflection
-				var transformMatrix:Matrix;
+				var reflectedBitmapTemp:Bitmap = new Bitmap( _bitmap.bitmapData, PixelSnapping.ALWAYS, true );
 				switch( direction )
 				{
 					case "horizontal":
-						transformMatrix = new Matrix( -1, 0, 0, 0, _bitmap.width, 0 );
+						reflectedBitmapTemp.scaleX = -1;
 						break;
 					
 					case "vertical":
-						transformMatrix = new Matrix( 0, 0, 0, -1, 0, _bitmap.height );
+						reflectedBitmapTemp.scaleY = -1;
 						break;
 				}
+				reflectedBitmapTemp.cacheAsBitmap = true;
 				
-				// the reflected bitmap
-				var reflectedBitmap:Bitmap = new Bitmap( new BitmapData( _bitmap.width, _bitmap.height ), PixelSnapping.ALWAYS, true );
-				reflectedBitmap.bitmapData.draw( _bitmap, transformMatrix, null, null, null, true );
+				var reflectedBitmapData:BitmapData = new BitmapData( 
+					reflectedBitmapTemp.bitmapData.width, reflectedBitmapTemp.bitmapData.height,
+					false );
+					reflectedBitmapData.draw( reflectedBitmapTemp, null, null, null, null, true );
+				
+				var reflectedBitmap:Bitmap = new Bitmap( reflectedBitmapData, PixelSnapping.ALWAYS, true );
 				
 				return reflectedBitmap;
 			}
@@ -125,7 +128,7 @@ package jcarpe.util
 		public static function samplePixelColor( _x:Number, _y:Number, _bitmap:Bitmap ) : uint
 		{
 			// check to see if the provided coordinates are within the bitmap bounds
-			if( _x > _bitmap.width || _y > _bitmap.height || _x < 0 || _y < 0 )
+			if( _x > _bitmap.width-1 || _y > _bitmap.height-1 || _x < 0 || _y < 0 )
 			{
 				throw new Error( "the provided coordinates are outside the bounds of the provided bitmap" );
 			}

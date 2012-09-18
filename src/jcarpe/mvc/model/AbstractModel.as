@@ -1,30 +1,27 @@
-package jcarpe.mvc.controller
+package jcarpe.mvc.model
 {
 	import flash.errors.IllegalOperationError;
 	import flash.events.EventDispatcher;
+	
+	import jcarpe.mvc.controller.AbstractController;
 
 	/**
-	 * AbstractController
+	 * AbstractModel
+	 * 
+	 * A basic abstraction of a model that is designed to be simple enough for
+	 * extremely simple reuse. This model has a stand alone dispatcher as
+	 * opposed to extending from the EventDispatcher class.
 	 * 
 	 * @author Joe Carpenito
-	 * 
-	 * @see flash.events.EventDispatcher
-	 * 
-	 * A basic abstraction of a controller that is designed to be simple enough for
-	 * extremely simple reuse. It has it's own stand alone event dispatcher as
-	 * opposed to extending from an EventDispatcher. I have found this provides a
-	 * little more flexibility if you want to have a global event dispatcher that
-	 * is responisble for multiple event systems. For example having it responsible
-	 * for the ApplicationController events as well as sub-controller events.
 	 */
-	public class AbstractController
+	public class AbstractModel
 	{
 		// --------------------------------------------------------------------------------
 		// PROPERTIES
 		// --------------------------------------------------------------------------------
 		protected var _dispatcher:EventDispatcher;
 		/**
-		 * The event dispatcher just for this controller.
+		 * The event dispatcher just for this model.
 		 */
 		public function get dispatcher():EventDispatcher
 		{
@@ -35,10 +32,10 @@ package jcarpe.mvc.controller
 		// --------------------------------------------------------------------------------
 		// CONSTRUCTOR
 		// --------------------------------------------------------------------------------
-		public function AbstractController()
+		public function AbstractModel()
 		{
 			// force abstraction of the class
-			if( Object(this).constructor === AbstractController )
+			if( Object(this).constructor === AbstractModel )
 			{
 				throw new IllegalOperationError( "AbstractController is an abstract class and cannot be directly instantiated" );
 			}
