@@ -9,6 +9,7 @@ package jcarpe.mvc.controller
 	 * @author Joe Carpenito
 	 * 
 	 * @see flash.events.EventDispatcher
+	 * @see jcarpe.mvc.controller.IController
 	 * 
 	 * A basic abstraction of a controller that is designed to be simple enough for
 	 * extremely simple reuse. It has it's own stand alone event dispatcher as
@@ -17,7 +18,7 @@ package jcarpe.mvc.controller
 	 * is responisble for multiple event systems. For example having it responsible
 	 * for the ApplicationController events as well as sub-controller events.
 	 */
-	public class AbstractController
+	public class AbstractController implements IController
 	{
 		// --------------------------------------------------------------------------------
 		// PROPERTIES
@@ -40,8 +41,10 @@ package jcarpe.mvc.controller
 			// force abstraction of the class
 			if( Object(this).constructor === AbstractController )
 			{
-				throw new IllegalOperationError( "AbstractController is an abstract class and cannot be directly instantiated" );
+				throw new IllegalOperationError( 
+					"AbstractController is an abstract class and cannot be directly instantiated" );
 			}
 		}
+		
 	}
 }

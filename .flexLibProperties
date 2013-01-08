@@ -3,6 +3,9 @@
   <includeClasses>
     <classEntry path="jcarpe.mvc.model.AbstractModel"/>
     <classEntry path="jcarpe.mvc.view.AbstractView"/>
+    <classEntry path="jcarpe.mvc.controller.IController"/>
+    <classEntry path="jcarpe.mvc.model.IModel"/>
+    <classEntry path="jcarpe.mvc.view.IView"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

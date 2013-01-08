@@ -51,7 +51,7 @@ package jcarpe.util
 
 			// the image to be cropped
 			var croppedBitmap:Bitmap = new Bitmap( new BitmapData( _width, _height ), PixelSnapping.ALWAYS, true );
-			croppedBitmap.bitmapData.draw( ( bitmap != null ) ? bitmap : _stage, new Matrix(1, 0, 0, 1, -_x, -_y) , null, null, cropArea, true );
+				croppedBitmap.bitmapData.draw( ( bitmap != null ) ? bitmap : _stage, new Matrix(1, 0, 0, 1, -_x, -_y), null, null, cropArea, true );
 			
 			return croppedBitmap;
 		}
@@ -178,6 +178,34 @@ package jcarpe.util
 			saturatedBitmap = bitmap;
 			
 			return saturatedBitmap;
+		}
+		
+		/**
+		 * Resizes an image to the given dimensions.
+		 * 
+		 * @param bitmap
+		 * the bitmap to be altered
+		 * 
+		 * @param x
+		 * value of the new X dimension
+		 * 
+		 * @param y
+		 * value of the new Y dimension
+		 * 
+		 * @return saturatedBitmap
+		 * the resized bitmap
+		 **/
+		public static function resize( bitmap:Bitmap, x:Number, y:Number ) : Bitmap
+		{
+//			bitmap.scaleX = x/bitmap.width;
+//			bitmap.scaleY = y/bitmap.height;
+			
+			var transformMatrix:Matrix = new Matrix( x/bitmap.width, 0, 0, y/bitmap.height, 0, 0 );
+			
+			var resizedBitmap:Bitmap = new Bitmap( new BitmapData( x, y, false ) );
+				resizedBitmap.bitmapData.draw( bitmap, transformMatrix, null, null, null, true );
+				
+			return resizedBitmap;
 		}
 		
 	}

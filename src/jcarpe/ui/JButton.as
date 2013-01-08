@@ -50,7 +50,8 @@ package jcarpe.ui
 			
 			if( Object(this).constructor === JButton )
 			{
-				throw new IllegalOperationError( "JButton is an abstract class and cannot be directly instantiated" );
+				throw new IllegalOperationError( 
+					"JButton is an abstract class and cannot be directly instantiated" );
 			}
 		}
 		

@@ -14,7 +14,7 @@ package jcarpe.mvc.model
 	 * 
 	 * @author Joe Carpenito
 	 */
-	public class AbstractModel
+	public class AbstractModel implements IModel
 	{
 		// --------------------------------------------------------------------------------
 		// PROPERTIES
@@ -37,7 +37,8 @@ package jcarpe.mvc.model
 			// force abstraction of the class
 			if( Object(this).constructor === AbstractModel )
 			{
-				throw new IllegalOperationError( "AbstractController is an abstract class and cannot be directly instantiated" );
+				throw new IllegalOperationError( 
+					"AbstractModel is an abstract class and cannot be directly instantiated" );
 			}
 		}
 	}

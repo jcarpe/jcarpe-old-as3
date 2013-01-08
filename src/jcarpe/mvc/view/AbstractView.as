@@ -11,7 +11,7 @@ package jcarpe.mvc.view
 	 * 
 	 * @author Joe Carpenito
 	 */
-	public class AbstractView extends Sprite
+	public class AbstractView extends Sprite implements IView
 	{
 		// --------------------------------------------------------------------------------
 		// CONSTRUCTOR
@@ -23,7 +23,8 @@ package jcarpe.mvc.view
 			// force abstraction of the class
 			if( Object(this).constructor === AbstractView )
 			{
-				throw new IllegalOperationError( "AbstractController is an abstract class and cannot be directly instantiated" );
+				throw new IllegalOperationError( 
+					"AbstractView is an abstract class and cannot be directly instantiated" );
 			}
 		}
 		
@@ -31,16 +32,26 @@ package jcarpe.mvc.view
 		// PUBLIC API
 		// --------------------------------------------------------------------------------
 		/**
-		 * Remove all the child display objects from the view.
-		 * 
-		 * @public
+		 * Remove all the child display objects from the view. Returns a boolean based on
+		 * the success of removing all the children on the view.
 		 */
-		public function destroy() : void
+		public function destroy() : Boolean
 		{
 			while( this.numChildren > 0 )
 			{
 				this.removeChildAt( 0 );
 			}
+			
+			if ( this.numChildren == 0 ) { return true; }
+			else { return false; }
+		}
+		
+		/**
+		 * Update the view.
+		 */
+		public function update() : void
+		{
+			
 		}
 	}
 }
